@@ -11,6 +11,8 @@ public class RideMatchingSystem {
 		availableDrivers.add(driver);
 	}
 	
+	
+	
 	public void requestRide(Passenger passanger,double distance,FareStrategy fareStrategy) {
 		if(availableDrivers.isEmpty()) {
 			passanger.notify("Driver is not available");
