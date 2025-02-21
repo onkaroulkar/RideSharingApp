@@ -24,12 +24,23 @@ public class RideMatchingSystem {
 
 		// Mediator
 		availableDrivers.remove(nearestDriver);
-		passanger.notify("Ride schedule successfully" + nearestDriver);
 
-		// change the status of the ride?
+		Ride ride = new Ride(passanger, nearestDriver, distance, fareStrategy);
+
+		// Calculate fare
+		ride.calculateFare();
+
+		// notify both passenger and driver
+		passanger.notify("Ride scheduled with fare + Rs " + ride.getFare());
+		nearestDriver.notify("You have a new ride request for " + ride.getFare());
+
+		// change the status of the ride
+		ride.updateStatus(RideStatus.ONGOING);
 
 		// change the status of the ride after ride is finished
+		ride.updateStatus(RideStatus.COMPLETED);
 		availableDrivers.add(nearestDriver);
+		return;
 	}
 
 	private Driver findNearestDriver(Location passengerLocation) {
