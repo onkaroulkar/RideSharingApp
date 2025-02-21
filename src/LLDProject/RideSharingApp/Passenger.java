@@ -8,6 +8,6 @@ public class Passenger extends User {
 
 	@Override
 	public void notify(String msg) {
-		System.out.println(msg);
+		System.out.println("Passenger : " + msg);
 	}
 }
