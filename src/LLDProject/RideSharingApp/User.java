@@ -19,5 +19,5 @@ abstract class User {
 		return location;
 	}
 
-	public abstract void notify(String msg);
+	public abstract void notify(String msg );
 } 

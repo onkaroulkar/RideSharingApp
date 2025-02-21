@@ -13,7 +13,7 @@ public class Location {
 	public double getLatitude() {
 		return latitude;
 	}
-
+ 
 	public double getLongitude() {
 		return longitude;
 	}
